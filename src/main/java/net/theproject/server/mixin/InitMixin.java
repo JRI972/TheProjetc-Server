@@ -1,17 +1,18 @@
 package net.theproject.server.mixin;
 
 import net.minecraft.client.gui.screen.TitleScreen;
-import net.theproject.server.Init;
 
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
+import static net.theproject.server.utils.Logger.logInfo;
+
 @Mixin(TitleScreen.class)
 public class InitMixin {
 	@Inject(at = @At("HEAD"), method = "init()V")
 	private void init(CallbackInfo info) {
-		Init.LOGGER.info("This line is printed by an example mod mixin!");
+		logInfo("This line is printed by an example mod mixin!");
 	}
 }

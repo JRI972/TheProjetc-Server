@@ -1,21 +1,29 @@
 package net.theproject.server;
 
 import net.fabricmc.api.ModInitializer;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemGroup;
+import net.minecraft.util.Identifier;
+import net.minecraft.util.Rarity;
+import net.minecraft.util.registry.Registry;
+
+import static net.theproject.server.utils.Logger.logInfo;
 
 public class Init implements ModInitializer {
-	// This logger is used to write text to the console and the log file.
-	// It is considered best practice to use your mod id as the logger's name.
-	// That way, it's clear which mod wrote info, warnings, and errors.
-	public static final Logger LOGGER = LogManager.getLogger("tpserver");
+
+	public static final String MOD_ID = "tpserver";
+	
+	//ITEM
+	public static final Item COINS = new Item(new FabricItemSettings().group(ItemGroup.MISC).fireproof().maxCount(1000).maxDamage(0).rarity(Rarity.COMMON));
 
 	@Override
 	public void onInitialize() {
-		// This code runs as soon as Minecraft is in a mod-load-ready state.
-		// However, some things (like resources) may still be uninitialized.
-		// Proceed with mild caution.
+		logInfo("Hello Fabric world!");
 
-		LOGGER.info("Hello Fabric world!");
+
+		//Registerie
+			//Item
+			Registry.register(Registry.ITEM, new Identifier(MOD_ID, "coins"), COINS);
 	}
 }
