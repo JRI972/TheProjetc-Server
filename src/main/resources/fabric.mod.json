@@ -20,6 +20,9 @@
   "entrypoints": {
     "main": [
       "net.theproject.server.Init"
+    ],
+    "client": [
+      "net.theproject.server.ClientInit"
     ]
   },
   "mixins": [
@@ -27,7 +30,7 @@
   ],
 
   "depends": {
-    "fabricloader": ">=0.11.3",
+    "fabricloader": ">=0.12.0",
     "fabric": "*",
     "minecraft": "1.17.x",
     "java": ">=16"

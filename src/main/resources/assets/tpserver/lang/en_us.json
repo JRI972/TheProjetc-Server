@@ -1,0 +1,5 @@
+{
+    "item.tpserver.coins" : "Coins",
+    "item.tpserver.coins.line1" : "This is u're money",
+    "item.tpserver.coins.tooltip": "My Tooltip"
+}
